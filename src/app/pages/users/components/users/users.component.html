@@ -1,0 +1,22 @@
+
+<div class="wrap">
+  <div>
+    <h4>All users</h4>
+    <div *ngFor="let user of users$ | async">
+      <p>id {{ user.id }}</p>
+      <p>name: {{ user.name }}</p>
+      <p>email: {{ user.email }}</p>
+      <hr>
+    </div>
+  </div>
+
+  <div>
+    <h4>User by id ({{ userId }})</h4>
+    <div *ngIf="userById$ | async as user">
+      <p>id {{ user.id }}</p>
+      <p>name: {{ user.name }}</p>
+      <p>email: {{ user.email }}</p>
+      <hr>
+    </div>
+  </div>
+</div>
